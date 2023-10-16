@@ -5,16 +5,13 @@
 typedef unsigned un;
 void spiralize (unsigned n, int spiral[n][n])
 {
-  // mutate the spiral[][] 2D-array
   int t, b, r ,l; 
   t = r = n; 
   b = l = 0;
   printf("%d \n", n);
   bool f = false;
   for (un y = 0; y < n * 5; y++){
-    //if((i + 1)* 4 > n){break;}
-    // lft 
-    //if(b >= n/2 + 1){break;}
+
     for (int i = l; i < r; i ++){
       if(spiral[b + 1][i + 1] == 1){f = true; break;}
       spiral[b][i] = 1;
@@ -22,16 +19,13 @@ void spiralize (unsigned n, int spiral[n][n])
     if(f){break;}
     if (y > 0){l += 2;}
 
-    // top -> bot 
     for (int j = b; j < t; j ++){ spiral[j][r - 1] = 1;}
     
-    // right -> left
     if((r - 1) - l < 2){break;}
     printf("%d/%d | ",l, r - 1);
     for (int k = r - 1; k > l - 1; k --){spiral[t - 1][k] = 1;}
     
     b+= 2;
-    // bot -> top
     for (int v = t - 1; v > b - 1; v --){
        spiral[v][l] = 1;
     }
