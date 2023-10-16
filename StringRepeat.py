@@ -1,6 +1,6 @@
-def repeat_str(allah, string):
+def repeat_str(ze, string):
     reponse = ""
-    for zero in range(allah): # boucle jusqu'à {allah}
+    for zero in range(ze): # boucle jusqu'à {ze}
         print(zero)
         reponse += string # rajoute phrase dans => reponse
        
